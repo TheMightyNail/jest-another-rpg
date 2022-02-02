@@ -1,5 +1,10 @@
-const { TestWatcher } = require('jest');
+const Potion = require('../lib/Potion');
+
+jest.mock('..lib/Potion.js');
+console.log(new Potion());
+
 const Player = require('../lib/Player');
+
 
 test('create a player object', () => {
     const player = new Player('Dave');
@@ -9,3 +14,4 @@ test('create a player object', () => {
     expect(player.strength).toEqual(expect.any(Number));
     expect(player.agility).toEqual(expect.any(Number));
 });
+
